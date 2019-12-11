@@ -1,0 +1,33 @@
+{
+  "name": "vue-slim-stackedbar",
+  "author": {
+    "name": "CHE5YA",
+    "url": "https://www.twitch.tv/chesya_"
+  },
+  "version": "0.1.0",
+  "description": "A Simple horizontal stacked bar chart Component for Vue.",
+  "main": "index.js",
+  "keywords": [
+    "horizontal",
+    "stacked",
+    "stacked bar chart",
+    "stacked bar",
+    "bar chart",
+    "vue",
+    "vuejs"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/che5ya/vue-slim-stackedbar"
+  },
+  "homepage": "https://github.com/che5ya/vue-slim-stackedbar#readme",
+  "bugs": {
+    "url": "https://github.com/che5ya/vue-slim-stackedbar/issues",
+    "email": "che5ya@naver.com"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "hex-to-hsl": "^1.0.2",
+    "vue": "^2.5.17"
+  }
+}
