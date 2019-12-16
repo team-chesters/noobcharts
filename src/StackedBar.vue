@@ -6,14 +6,17 @@
     :key="index"
     :style="bgColor(item, index)+'flex-basis:' + item.value +'%;'"
     data-color="">
-      <div
-      class="label__stack">
-        <i
-        class="decoration__stack"
-        />
+      <div class="label__stack">
+        <i class="decoration__stack" />
         <span
-        class="text__stack">
+        class="text__stack"
+        v-if="item.title">
           {{item.title}}: <strong>{{item.value}}</strong>
+        </span>
+        <span
+        class="text__stack"
+        v-else>
+          <strong>{{item.value}}</strong>
         </span>
       </div>
     </div>
