@@ -1,35 +1,21 @@
 <template>
   <div class="wrap__stack">
     <div
-     class="item__stack"
-     v-for="(item, index) in data"
-     :style="bgColor(item,index) + ' flex-basis:' + item.value +'%;'"
-     :key="index">
-      <span
-      class="label__stack"
-      v-if="item.text && item.title">
-        <strong>
-          {{item.title}}
-        </strong>
-        &nbsp;&colon;&nbsp;
-        <span>
-          {{item.text}}
+    class="item__stack"
+    v-for="(item, index) in data"
+    :key="index"
+    :style="bgColor(item, index)+'flex-basis:' + item.value +'%;'"
+    data-color="">
+      <div
+      class="label__stack">
+        <i
+        class="decoration__stack"
+        />
+        <span
+        class="text__stack">
+          {{item.title}}: <strong>{{item.value}}</strong>
         </span>
-      </span>
-      <span
-      class="label__stack"
-      v-else-if="!item.text && item.title">
-        <strong>
-          {{item.title}}
-        </strong>
-      </span>
-      <span
-      class="label__stack"
-      v-else>
-        <span>
-          {{item.value}}
-        </span>
-      </span>
+      </div>
     </div>
   </div>
 </template>
@@ -60,11 +46,9 @@ export default {
         const colorArray = (item.color).split('#');
         const color = HexToRGB(colorArray[1]);
         return `background-color:rgba(${color[0]}, ${color[1]}, ${color[2]}, 1);`;
-        // eslint-disable-next-line
-      } else {
-        const randomChoice = this.colors[Math.floor(Math.random() * this.colors.length)];
-        return `background-color:${randomChoice};`;
       }
+      const randomChoice = this.colors[Math.floor(Math.random() * this.colors.length)];
+      return `background-color:${randomChoice};`;
     },
   },
 };
@@ -78,14 +62,37 @@ export default {
   border-color: #EEE;
   background-color: #ffffff;
 }
+
 .item__stack {
+  position: relative;
   height: 35px;
-  /* line-height: 35px; */
 }
+
 .label__stack {
+  position: absolute;
+  top: .235rem;
+  right: -1rem;
   display: inline-block;
-  padding: .25rem .75rem;
-  color: #ffffff;
+  padding: .235rem;
+  color: #fff;
   background-color: rgba(0, 0, 0, .55);
+  border: 1px solid rgba(0, 0, 0, .25);
+  border-radius: 5px;
+  opacity: 0;
+  transition: opacity .3s;
+  z-index: 1000;
+}
+.item__stack:hover .label__stack {
+  opacity: 1;
+}
+
+.label__stack .decoration__stack {
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  background-color: inherit;
+  border-radius: 50%;
+  vertical-align: text-top;
+  display: none;
 }
 </style>
