@@ -27,7 +27,7 @@
   },
   "license": "MIT",
   "dependencies": {
-    "hex-to-hsl": "^1.0.2",
+    "hex-to-rgb": "^1.0.1",
     "vue": "^2.5.17"
   }
 }
