@@ -4,7 +4,7 @@
     "name": "CHE5YA",
     "url": "https://www.twitch.tv/chesya_"
   },
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "A Simple horizontal stacked bar chart Component for Vue.",
   "main": "index.js",
   "keywords": [

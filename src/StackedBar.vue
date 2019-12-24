@@ -4,8 +4,13 @@
     class="item__stack"
     v-for="(item, index) in data"
     :key="index"
-    :style="bgColor(item, index)+'flex-basis:' + item.value +'%;'"
+    :style="bgColor(item, index)+'flex-basis:' + item.percent +'%;'"
     data-color="">
+      <div class="percent__stack">
+        <span class="text__stack">
+          <strong>{{item.percent}}%</strong>
+        </span>
+      </div>
       <div class="label__stack">
         <i class="decoration__stack" />
         <span
