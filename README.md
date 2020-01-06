@@ -8,11 +8,11 @@ A Simple horizontal stacked bar chart Component for Vue.
 $ npm install vue-slim-stackedbar
 ```
 
-## Preview & Usage
+## Usage
 
-* Preview Image
-<p align="center"><img align="center" style="width:600px" src="https://i.imgur.com/A0adjUh.png"/></p>
-
+<!-- * Preview Image -->
+<!-- <p align="center"><img align="center" style="width:600px" src="https://i.imgur.com/A0adjUh.png"/></p> -->
+<!-- 
 * Default Usage
 ```js
 <template>
@@ -40,9 +40,9 @@ export default {
 };
 </script>
 
-```
+``` -->
 
-* If you wanna use custom colors, then :
+<!-- * If you wanna use custom colors, then : -->
 ```js
 <template>
   <div>
@@ -60,9 +60,9 @@ export default {
   data() {
     return {
       data: [
-        { title: 'First', value: 19, color:'#dc3545' },
-        { title: 'Second', value: 36, color:'#6610f2' },
-        { title: 'Third', value: 45, color:'#ffc107' },
+        { title: 'First', value: 19, color:'#dc3545', percent: 27 },
+        { title: 'Second', value: 36, color:'#6610f2', percent: 33 },
+        { title: 'Third', value: 45, color:'#ffc107', percent: 44 },
       ],
     };
   },
@@ -73,11 +73,13 @@ export default {
 
 ## Props
 
-| Name    | Type     | Default   | Description                                                                                    |
+Work in Progress...
+
+<!-- | Name    | Type     | Default   | Description                                                                                    |
 |--------------------|-----------|----------------------|-------------------------------------------------------------------------|
 | title   | String   | -         | Title of Data Stack. Only **String** can be used.                                              |
 | value   | Number   | -         | Value of Data Stack. Only **Number** can be used. The sum of the data must not exceed **100**. |
-| color   | String   | -         | Background Color of Data Stack. Only **Color HexCode** can be used. If you do not use Color String, One of **15 random colors** will be inserted automatically. |
+| color   | String   | -         | Background Color of Data Stack. Only **Color HexCode** can be used. If you do not use Color String, One of **15 random colors** will be inserted automatically. | -->
 
 
 ## Author

@@ -1,29 +1,39 @@
 <template>
-  <div class="wrap__stack">
+  <div id="stackedBar">
     <div
-    class="item__stack"
-    v-for="(item, index) in data"
-    :key="index"
-    :style="bgColor(item, index)+'flex-basis:' + item.percent +'%;'"
-    data-color="">
-      <div class="percent__stack">
-        <span class="text__stack">
-          <strong>{{item.percent}}%</strong>
-        </span>
+    v-if="data.length !== 0"
+    class="wrap__stack">
+      <div
+      v-show="item.value !== 0"
+      class="item__stack"
+      v-for="(item, index) in data"
+      :key="index"
+      :style="bgColor(item, index)+'flex-basis:' + item.percent +'%;'"
+      data-color="">
+        <div class="percent__stack">
+          <span class="text__stack">
+            <strong>{{item.percent}}%</strong>
+          </span>
+        </div>
+        <div class="label__stack">
+          <i class="decoration__stack" />
+          <span
+          class="text__stack"
+          v-if="item.title">
+            {{item.title}}: <strong>{{item.value}}</strong>
+          </span>
+          <span
+          class="text__stack"
+          v-else>
+            <strong>{{item.value}}</strong>
+          </span>
+        </div>
       </div>
-      <div class="label__stack">
-        <i class="decoration__stack" />
-        <span
-        class="text__stack"
-        v-if="item.title">
-          {{item.title}}: <strong>{{item.value}}</strong>
-        </span>
-        <span
-        class="text__stack"
-        v-else>
-          <strong>{{item.value}}</strong>
-        </span>
-      </div>
+    </div>
+    <div
+    v-else
+    class="wrap__stack data-not-found">
+      <span>Data is Not Found!</span>
     </div>
   </div>
 </template>
@@ -31,8 +41,6 @@
 <style src="./StackedBar.css" scoped />
 
 <script>
-import HexToRGB from 'hex-to-rgb';
-
 export default {
   name: 'StackedProgressBar',
   props: {
@@ -52,10 +60,9 @@ export default {
   },
   methods: {
     bgColor(item) {
+      console.log(item.color);
       if (item.color) {
-        const colorArray = (item.color).split('#');
-        const color = HexToRGB(colorArray[1]);
-        return `background-color:rgba(${color[0]}, ${color[1]}, ${color[2]}, 1);`;
+        return `background-color:`+item.color+`;`;
       }
       const randomChoice = this.colors[Math.floor(Math.random() * this.colors.length)];
       return `background-color:${randomChoice};`;
