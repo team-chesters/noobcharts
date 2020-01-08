@@ -60,7 +60,6 @@ export default {
   },
   methods: {
     bgColor(item) {
-      console.log(item.color);
       if (item.color) {
         return `background-color:`+item.color+`;`;
       }
