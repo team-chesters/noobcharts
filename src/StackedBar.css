@@ -1,5 +1,10 @@
 @charset "utf-8";
 
+#stackedBar {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
 .wrap__stack {
   display: flex;
   border-width: 1px;
@@ -11,6 +16,20 @@
 .item__stack {
   position: relative;
   height: 35px;
+}
+
+.item__stack:hover,
+.item__stack:focus,
+.item__stack.item-active,
+.series__legend.item-active {
+  box-shadow: inset 200px 200px 0px 200px inherit;
+  opacity: 0.85;
+}
+
+.item__stack.item-disabled,
+.series__legend.item-disabled,
+.wrap__stack:hover .item__stack:not(:hover) {
+  opacity: 0.2;
 }
 
 .label__stack,
@@ -35,6 +54,12 @@
   z-index: 1000;
 }
 
+.label__stack {
+  font-weight: 600;
+  background-color: rgba(0, 0, 0, 0);
+  border-color: rgba(0, 0, 0, 0);
+}
+
 .percent__stack {
   position: static;
   display: block;
@@ -55,12 +80,42 @@
   opacity: 0;
 }
 
-.label__stack .decoration__stack {
+.legend__stack {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: auto;
+  margin-top: 1rem;
+  padding: 0 1rem;
+}
+
+.series__legend {
+  display: block;
+  width: auto;
+  margin: 0 .5rem;
+  align-items: center;
+  cursor: pointer;
+  line-height: normal;
+}
+
+.marker__legend {
+  position: relative;
+  left: 0;
+  right: 0;
+  top: 0;
   display: inline-block;
-  width: 1rem;
-  height: 1rem;
-  background-color: inherit;
-  border-radius: 50%;
-  vertical-align: text-top;
-  display: none;
+  width: 12px;
+  height: 12px;
+  margin-right: 0.3rem;
+  border-width: 0;
+  border-color: #fff;
+  border-radius: 2px;
+  cursor: pointer;
+  vertical-align: middle;
+}
+
+.text__legend {
+  position: relative;
+  font-size: .750rem;
+  color: #333333;
 }

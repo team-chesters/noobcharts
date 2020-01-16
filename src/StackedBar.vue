@@ -1,41 +1,52 @@
 <template>
-  <div id="stackedBar">
+  <div
+  v-if="data.length !== 0"
+  id="stackedBar">
+    <ul
+    class="legend__stack">
+      <li
+      v-show="object.value !== 0"
+      v-for="(object, number) in data"
+      :key="object.id"
+      class="series__legend"
+      ref="legend"
+      @click="selected(object.id)">
+        <i
+        :style="bgColor(object)+txtColor(object)"
+        class="marker__legend" />
+        <span class="text__legend">
+          {{ object.title }}
+        </span>
+      </li>
+    </ul>
     <div
-    v-if="data.length !== 0"
     class="wrap__stack">
       <div
       v-show="item.value !== 0"
       class="item__stack"
       v-for="(item, index) in data"
       :key="index"
-      :style="bgColor(item, index)+'flex-basis:' + item.percent +'%;'"
-      data-color="">
+      ref="stack"
+      :style="bgColor(item)+'flex-basis:' + item.percent +'%;'">
         <div class="percent__stack">
           <span class="text__stack">
-            <strong>{{item.percent}}%</strong>
+            <strong>{{ Math.round(item.percent) }}%</strong>
           </span>
         </div>
         <div class="label__stack">
-          <i class="decoration__stack" />
           <span
-          class="text__stack"
-          v-if="item.title">
-            {{item.title}}: <strong>{{item.value}}</strong>
-          </span>
-          <span
-          class="text__stack"
-          v-else>
+          class="text__stack">
             <strong>{{item.value}}</strong>
           </span>
         </div>
       </div>
     </div>
-    <div
+  </div>
+  <div
     v-else
     class="wrap__stack data-not-found">
       <span>Data is Not Found!</span>
     </div>
-  </div>
 </template>
 
 <style src="./StackedBar.css" scoped />
@@ -65,6 +76,13 @@ export default {
       }
       const randomChoice = this.colors[Math.floor(Math.random() * this.colors.length)];
       return `background-color:${randomChoice};`;
+    },
+    txtColor(item) {
+      if (item.color) {
+        return `color:`+item.color+`;`;
+      }
+      const randomChoice = this.colors[Math.floor(Math.random() * this.colors.length)];
+      return `color:${randomChoice};`;
     },
   },
 };
