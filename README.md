@@ -1,94 +1,108 @@
 # vue-slim-stackedbar
-
 A Simple horizontal stacked bar chart Component for Vue.
 
+![](https://img.shields.io/badge/license-MIT-green)  ![](https://img.shields.io/badge/release-v0.1.8-blue)  ![](https://img.shields.io/badge/Size-9KB-blue)  ![](https://img.shields.io/badge/code%20style-prettier-ff69b4)  
+
+
+
+
+## Browser Support
+
+|Chrome|Firefox|Safari|Edge|IE|
+|--|--|--|--|--|
+|35+|31+|6+|Legacy+|NOT TESTED|
+
+
+
+
 ## Installing
+
+**Installing via npm**
 
 ```bash
 $ npm install vue-slim-stackedbar
 ```
 
+
+
+
 ## Usage
 
-<!-- * Preview Image -->
-<!-- <p align="center"><img align="center" style="width:600px" src="https://i.imgur.com/A0adjUh.png"/></p> -->
-<!-- 
-* Default Usage
 ```js
-<template>
-  <div>
-    <StackedBar :data="data"/>
-  </div>
-</template>
-
-<script>
-import StackedBar from 'vue-slim-stackedbar';
-
-export default {
-  components: {
-    StackedBar,
-  },
-  data() {
-    return {
-      data: [
-        { title: 'First', value: 19 },
-        { title: 'Second', value: 36 },
-        { title: 'Third', value: 45 },
-      ],
-    };
-  },
-};
-</script>
-
-``` -->
-
-<!-- * If you wanna use custom colors, then : -->
-```js
-<template>
-  <div>
-    <StackedBar :data="data"/>
-  </div>
-</template>
-
-<script>
-import StackedBar from 'vue-slim-stackedbar';
-
-export default {
-  components: {
-    StackedBar,
-  },
-  data() {
-    return {
-      data: [
-        { title: 'First', value: 19, color:'#dc3545', percent: 27 },
-        { title: 'Second', value: 36, color:'#6610f2', percent: 33 },
-        { title: 'Third', value: 45, color:'#ffc107', percent: 44 },
-      ],
-    };
-  },
-};
-</script>
-
+import StackedBar from 'vue-slim-stackedbar'
 ```
+
+
+* To create a stacked bar chart with minimal configuration, write as follows:
+
+```html
+<template>
+  <StackedBar :data="data" />
+</template>
+```
+
+```js
+export default {
+  components: {
+    StackedBar,
+  },
+  data() {
+    return {
+      data: [
+        {
+          title: 'First',
+          value: 19,
+          percent: 19,
+          color: '#007bff'
+        },
+        {
+          title: 'Second',
+          value: 36,
+          percent: 36,
+          color: '#20c997'
+        },
+        {
+          title: 'Third',
+          value: 45,
+          percent: 45,
+          color: '#f28b8c'
+        }
+      ]
+    };
+  },
+};
+```
+
+
+* This will render the following chart:
+
+![](https://gitlab.com/CHESYA/CHE5YA/-/raw/master/uploads/sample.png)
+
+
+
 
 ## Props
 
-Work in Progress...
+|Name|Type|Default|Example|Description|
+|--|--|--|--|--|
+|title|String|X|'String Sample'|Title of Data Stack.<br>Only **String** can be used.|
+|value|Number|X|15|Value of data.<br>Only **Number** can be used.|
+|percent|Number|X|27|Value of percent.<br>Only **Number** can be used.<br> The sum of the data must not exceed **100**.|
+|color|String|X|'#f28b8c'|Title of Data Stack.<br>Only use a **color hash code with #**.|
 
-<!-- | Name    | Type     | Default   | Description                                                                                    |
-|--------------------|-----------|----------------------|-------------------------------------------------------------------------|
-| title   | String   | -         | Title of Data Stack. Only **String** can be used.                                              |
-| value   | Number   | -         | Value of Data Stack. Only **Number** can be used. The sum of the data must not exceed **100**. |
-| color   | String   | -         | Background Color of Data Stack. Only **Color HexCode** can be used. If you do not use Color String, One of **15 random colors** will be inserted automatically. | -->
 
 
-## Author
 
-**vue-slim-stackedbar** © [CHE5YA](https://github.com/che5ya), Released under the [MIT](./LICENSE) License.<br>
 
-> GitHub [@che5ya](https://github.com/che5ya) · Facebook [@che5ya](https://www.facebook.com/che5ya) · Twitch [@chesya_](https://www.twitch.tv/chesya_)
+## Contact
+
+[![](https://img.shields.io/badge/email-che5ya@naver.com-3EAF0E)](mailto:che5ya@naver.com)
+[![](https://img.shields.io/badge/facebook-che5ya-4267B2)](https://facebook.com/che5ya)
+[![](https://img.shields.io/badge/twitch-che5ya-6441a5)](https://www.twitch.tv/che5ya)
+
+
 
 
 ## License
 
-[MIT](LICENSE)
+vue-slim-stackedbar is released under MIT license. You are free to use, modify and distribute this software, as long as the copyright header is left intact.
