@@ -7,15 +7,12 @@
 
 .wrap__stack {
   display: flex;
-  border-width: 1px;
-  border-style: solid;
-  border-color: #EEE;
+  border: none;
   background-color: #ffffff;
 }
 
 .item__stack {
   position: relative;
-  height: 35px;
 }
 
 .item__stack:hover,
