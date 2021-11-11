@@ -11,7 +11,6 @@ A Simple horizontal stacked bar chart Component for Vue.
 |Chrome|Firefox|Safari|Edge|IE|
 |--|--|--|--|--|
 |35+|31+|6+|Legacy+|NOT TESTED|
-|--|--|--|--|--|
 
 
 
