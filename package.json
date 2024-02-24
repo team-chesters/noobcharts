@@ -1,32 +1,43 @@
 {
-  "name": "vue-slim-stackedbar",
-  "author": {
-    "name": "CHE5YA",
-    "url": "https://gitlab.com/che5ya/CHE5YA"
+  "name": "vue-noobcharts",
+  "type": "module",
+  "version": "0.0.1",
+  "main": "./dist/vue-noobcharts.umd.cjs",
+  "module": "./dist/vue-noobcharts.js",
+  "private": "false",
+  "exports": {
+    ".": {
+      "import": "./dist/vue-noobcharts.js",
+      "require": "./dist/vue-noobcharts.umd.cjs"
+    }
   },
-  "version": "0.1.8",
-  "description": "A Simple Single Horizontal stacked bar chart component for Vue.js 2.x.",
-  "main": "index.js",
-  "keywords": [
-    "horizontal",
-    "stacked",
-    "stacked bar chart",
-    "stacked bar",
-    "bar chart",
-    "vue",
-    "vuejs"
+  "typings": "./typings/vue-noobcharts.js",
+  "author": "Team Chesters",
+  "files": [
+    "src",
+    "dist"
   ],
+  "license": "MIT",
+  "keywords": [
+    "vue",
+    "vuejs",
+    "chart",
+    "noobcharts",
+    "noobcharts.js"
+  ],
+  "bugs": {
+    "url": "https://github.com/team-chesters/noobcharts/issues"
+  },
   "repository": {
     "type": "git",
-    "url": "https://gitlab.com/che5ya/vue-slim-stackedbar"
+    "url": "https://github.com/team-chesters/noobcharts"
   },
-  "homepage": "https://gitlab.com/che5ya/vue-slim-stackedbar/-/blob/master/README.md",
-  "bugs": {
-    "url": "https://gitlab.com/che5ya/vue-slim-stackedbar/-/issues",
-    "email": "che5ya@naver.com"
+  "peerDependencies": {
+    "vue": "> 3.0.0"
   },
-  "license": "MIT",
   "dependencies": {
-    "vue": "^2.5.17"
+    "@vitejs/plugin-vue": "^4.2.3",
+    "vite": "^4.3.9",
+    "vue": "^3.0.0"
   }
 }
